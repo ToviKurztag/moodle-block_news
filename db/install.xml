@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/news/db" VERSION="20161008" COMMENT="XMLDB file for Moodle blocks/news"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_news" COMMENT="Table of added news">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="owner_id" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="title" TYPE="char" LENGTH="200" NOTNULL="false" SEQUENCE="false" COMMENT="title"/>
+        <FIELD NAME="description" TYPE="char" LENGTH="500" NOTNULL="false" SEQUENCE="false" COMMENT="description"/>
+        <FIELD NAME="link" TYPE="char" LENGTH="500" NOTNULL="false" SEQUENCE="false" COMMENT="link"/>
+        <FIELD NAME="filename" TYPE="char" LENGTH="250" NOTNULL="false" SEQUENCE="false" COMMENT="name of file name"/>
+        <FIELD NAME="datecreated" TYPE="char" LENGTH="13" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="datemodified" TYPE="char" LENGTH="13" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

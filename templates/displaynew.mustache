@@ -1,0 +1,125 @@
+<div class="section" id="section">
+<div class="listnews" id="listnews">
+{{#listnews}}
+<span id={{edit}} class="edit"></span>
+<div class="displaynew" id="displaynew">
+    {{#edit}}
+    <a href="{{wwwroot}}/blocks/news/delete.php?id={{id}}" class="icon fa fa-trash fa-fw" 
+        title="{{#str}}deletenew, block_news {{/str}}" aria-label="{{#str}}deletenew, block_news {{/str}}">
+    </a>
+    <a href="{{wwwroot}}/blocks/news/post.php?id={{id}}" class="icon fa fa-pencil fa-fw " 
+        title="{{#str}}editnew, block_news {{/str}}" aria-label="{{#str}}editnew, block_news {{/str}}">
+    </a>
+    {{/edit}}
+    {{#link}}
+    <a href={{link}} target="_blank">
+    {{/link}}
+       {{#title}}
+       <div class="newtitle">{{{title}}}</div>
+       {{/title}}
+       {{#description}}
+       <p class="newdescription">{{{description}}}</p>
+       {{/description}}
+    {{#filename}}
+      <div class="newimage">
+       <img src="{{filename}}" width="250" height="150"><br/>
+      </div>
+    {{/filename}}
+    {{#link}}
+    </a>
+    {{/link}}
+    <span class="newdatecreated">{{datecreated}}</span><br/><br/>
+ </div>
+{{/listnews}}
+</div>
+</div>
+
+<style>
+.newtitle:before {
+    font-family: FontAwesome;
+    content: ">" !important;
+    letter-spacing: .12em;
+    font-size: 1.00em !important;
+    padding-left: .7em;
+    unicode-bidi: isolate-override;
+    font-weight: bold;
+}
+.newtitle span{
+font-size: 1.17rem;
+font-weight: bold;
+}
+.newtitle{
+font-size: 1.17rem;
+font-weight: bold;
+}
+.displaynew a{
+   color: black !important;
+}
+.displaynew a:hover{
+   color: #1177d1 !important;
+}
+.newdatecreated{
+color: gray;
+font-weight: bold;
+}
+p.newdescription {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+}
+p.newdescription:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+}
+p.newdescription:before {
+    /*content: '...';*/
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+</style>
+
+{{#edit}}
+<style>
+.listnews {
+    position: sticky !important;
+}
+.section {
+    overflow: auto;
+    min-height: 250px;
+    max-height: 250px;
+    position: relative;
+}
+}
+</style>
+{{/edit}}
+
+{{^edit}}
+<style>
+.section {
+    min-height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+/*@-moz-keyframes runnews {
+    0%   { -moz-transform: translateY(100%); }
+    100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes runnews {
+    0%   { -webkit-transform: translateY(100%); }
+    100% { -webkit-transform: translateY(-100%); }
+}*/
+</style>
+{{/edit}}
